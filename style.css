@@ -944,6 +944,39 @@ html:not(.js) .acc__chevron {
   border: 0;
 }
 
+.storefront {
+  grid-column: 1 / -1;
+  padding: var(--space-5);
+  border-radius: var(--radius);
+  background: var(--color-card);
+  box-shadow: var(--shadow);
+}
+
+.storefront__photos {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.storefront__photos img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-small);
+}
+
+.storefront__caption {
+  margin: var(--space-3) 0 0;
+  color: var(--color-muted);
+  font-size: var(--fs-small);
+}
+
+@media (min-width: 768px) {
+  .storefront__photos {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+}
+
 /* ---------- Pied de page ---------- */
 .site-footer {
   padding-top: var(--space-7);
