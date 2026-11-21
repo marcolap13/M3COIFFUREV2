@@ -1,6 +1,6 @@
 /* ==========================================================
    M3 Coiffure — feuille de style
-   Thème chaleureux : lin, sable, terracotta. Mobile d'abord.
+   Thème chaleureux : crème, sable, rouge ponceau. Mobile d'abord.
    ========================================================== */
 
 :root {
@@ -8,17 +8,17 @@
   --color-bg: #fbf7f2;
   --color-surface: #f4ebe1;
   --color-card: #ffffff;
-  --color-text: #2b2320;
-  --color-muted: #635650;
-  --color-line: #e5d6c8;
-  --color-accent: #b0532c;
-  --color-accent-dark: #8e3f1f;
-  --color-accent-soft: #f2d9cc;
+  --color-text: #1f1a1a;
+  --color-muted: #5a5250;
+  --color-line: #e8dcd2;
+  --color-accent: #c4161c;
+  --color-accent-dark: #9b1016;
+  --color-accent-soft: #f8dcd8;
   --color-open: #2f6b3a;
   --color-open-bg: #e3efe1;
-  --color-closed-bg: #f6dfd5;
-  --color-footer: #2b2320;
-  --color-footer-text: #efe4d8;
+  --color-closed-bg: #f9e0dc;
+  --color-footer: #8f0f14;
+  --color-footer-text: #fbeee9;
 
   /* Typographie */
   --font-title: "Fraunces", Georgia, "Times New Roman", serif;
@@ -47,7 +47,7 @@
   --header-h: 64px;
   --quickbar-h: 64px;
   --container: 1120px;
-  --shadow: 0 1px 2px rgb(43 35 32 / 0.06), 0 8px 24px rgb(43 35 32 / 0.06);
+  --shadow: 0 1px 2px rgb(31 26 26 / 0.06), 0 8px 24px rgb(31 26 26 / 0.06);
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -247,7 +247,7 @@ figure {
 
 .site-header.is-scrolled {
   border-color: var(--color-line);
-  box-shadow: 0 4px 16px rgb(43 35 32 / 0.05);
+  box-shadow: 0 4px 16px rgb(31 26 26 / 0.05);
 }
 
 .site-header__inner {
@@ -356,7 +356,7 @@ html:not(.js) .main-nav {
   padding: var(--space-2) var(--space-4) var(--space-5);
   background: var(--color-bg);
   border-bottom: 1px solid var(--color-line);
-  box-shadow: 0 12px 24px rgb(43 35 32 / 0.08);
+  box-shadow: 0 12px 24px rgb(31 26 26 / 0.08);
 }
 
 html:not(.js) .burger {
@@ -631,7 +631,7 @@ html:not(.js) .burger {
 
 .card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 2px 4px rgb(43 35 32 / 0.06), 0 16px 32px rgb(43 35 32 / 0.1);
+  box-shadow: 0 2px 4px rgb(31 26 26 / 0.06), 0 16px 32px rgb(31 26 26 / 0.1);
 }
 
 .card:hover .card__more .icon {
@@ -641,9 +641,9 @@ html:not(.js) .burger {
 /* ---------- Tarifs ---------- */
 .highlights {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-3);
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-5);
 }
 
 .highlights li {
@@ -663,6 +663,31 @@ html:not(.js) .burger {
   font-family: var(--font-title);
   font-size: 1.15rem;
   font-weight: 600;
+}
+
+.notice {
+  margin-bottom: var(--space-6);
+  padding: var(--space-5);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius-small);
+  background: var(--color-accent-soft);
+}
+
+.notice__title {
+  margin-bottom: var(--space-2);
+  font-family: var(--font-title);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+}
+
+.notice .btn {
+  margin-top: var(--space-1);
+}
+
+.acc__note {
+  margin-bottom: var(--space-2);
+  color: var(--color-muted);
+  font-size: var(--fs-small);
 }
 
 .accordion {
@@ -793,7 +818,6 @@ html:not(.js) .acc__chevron {
 .price-table td {
   font-weight: 700;
   text-align: right;
-  white-space: nowrap;
 }
 
 .price-table td:last-child,
@@ -918,6 +942,39 @@ html:not(.js) .acc__chevron {
   height: 100%;
   min-height: 320px;
   border: 0;
+}
+
+.storefront {
+  grid-column: 1 / -1;
+  padding: var(--space-5);
+  border-radius: var(--radius);
+  background: var(--color-card);
+  box-shadow: var(--shadow);
+}
+
+.storefront__photos {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.storefront__photos img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-small);
+}
+
+.storefront__caption {
+  margin: var(--space-3) 0 0;
+  color: var(--color-muted);
+  font-size: var(--fs-small);
+}
+
+@media (min-width: 768px) {
+  .storefront__photos {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
 }
 
 /* ---------- Pied de page ---------- */
@@ -1046,6 +1103,10 @@ html:not(.js) .acc__chevron {
   .cards {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-5);
+  }
+
+  .highlights {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .gallery {
